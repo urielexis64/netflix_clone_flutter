@@ -28,7 +28,7 @@ class MainPoster extends StatelessWidget {
                 end: Alignment.center),
           ),
         ),
-        TopNavbar()
+        TopNavbar(),
       ],
     );
   }
@@ -39,7 +39,7 @@ class MainPoster extends StatelessWidget {
       children: [
         Padding(
             padding: EdgeInsets.symmetric(horizontal: 6),
-            child: Text('Soap opera',
+            child: Text('Dramatic',
                 style: TextStyle(color: Colors.white, fontSize: 10))),
         Icon(
           Icons.fiber_manual_record_rounded,
@@ -48,7 +48,7 @@ class MainPoster extends StatelessWidget {
         ),
         Padding(
             padding: EdgeInsets.symmetric(horizontal: 6),
-            child: Text('Sex',
+            child: Text('Action',
                 style: TextStyle(color: Colors.white, fontSize: 10))),
         Icon(
           Icons.fiber_manual_record_rounded,
@@ -66,7 +66,7 @@ class MainPoster extends StatelessWidget {
         ),
         Padding(
             padding: EdgeInsets.symmetric(horizontal: 6),
-            child: Text('Teens',
+            child: Text('Heroes',
                 style: TextStyle(color: Colors.white, fontSize: 10))),
       ],
     );
@@ -81,7 +81,10 @@ class MainPoster extends StatelessWidget {
           Column(
             children: [
               Icon(Icons.check, color: Colors.white),
-              Text('Saved', style: TextStyle(color: Colors.white))
+              SizedBox(
+                height: 6,
+              ),
+              Text('Saved', style: TextStyle(color: Colors.white, fontSize: 11))
             ],
           ),
           FlatButton.icon(
@@ -99,7 +102,10 @@ class MainPoster extends StatelessWidget {
           Column(
             children: [
               Icon(Icons.info_outline, color: Colors.white),
-              Text('Info', style: TextStyle(color: Colors.white))
+              SizedBox(
+                height: 6,
+              ),
+              Text('Info', style: TextStyle(color: Colors.white, fontSize: 11))
             ],
           ),
         ],

@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: _createBody(),
       backgroundColor: Colors.black,
-      bottomNavigationBar: _createBottomNabigation(),
+      bottomNavigationBar: _createBottomNavigation(),
     );
   }
 
@@ -18,25 +18,16 @@ class HomePage extends StatelessWidget {
       child: ListView(
         children: [
           MainPoster(),
-          _horizontalList(
-              'Avances',
-              RoundedItem(
-                imageURL:
-                    'https://3.bp.blogspot.com/-qvw0-RjIjyc/W5gPSBHfSeI/AAAAAAAAh6E/QBCS4YQVKlU7Ur1p0dCfG1WM2N8EB0OcQCLcBGAs/s640/Elite_Official_Poster_JPosters.jpg',
-                bottomImageURL:
-                    'https://www.pikpng.com/pngl/b/255-2550276_elite-elite-serie-logo-png-clipart.png',
-                borderColor: Colors.redAccent,
-              ),
-              10),
-          _horizontalList('Películas de miedo', SquareItem(), 20),
-          _horizontalList('Películas de miedo', SquareItem(), 20),
-          _horizontalList('Películas de miedo', SquareItem(), 20),
+          _horizontalList(' Trailers'),
+          _horizontalList('Terror movies'),
+          _horizontalList('Películas de miedo'),
+          _horizontalList('Películas de miedo'),
         ],
       ),
     );
   }
 
-  Widget _horizontalList(String title, Widget widget, int items) {
+  Widget _horizontalList(String title) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -49,39 +40,77 @@ class HomePage extends StatelessWidget {
           ),
         ),
         Container(
-          height: 110,
-          child: ListView.builder(
+          height: 100,
+          child: ListView(
             scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) => widget,
-            itemCount: items,
+            children: [
+              RoundedItem(
+                imageURL:
+                    'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/lP5eKh8WOcPysfELrUpGhHJGZEH.jpg',
+                bottomImageURL:
+                    'https://www.orcasound.com/wp-content/uploads/2020/03/thumbnail_image002-1-1.png',
+                borderColor: Colors.redAccent,
+              ),
+              RoundedItem(
+                imageURL:
+                    'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/k7T9xRyzP41wBVNyNeLmh8Ch7gD.jpg',
+                bottomImageURL:
+                    'https://i.pinimg.com/originals/38/9c/2f/389c2f328fe966963879b01093a8a252.png',
+                borderColor: Colors.grey,
+              ),
+              RoundedItem(
+                imageURL:
+                    'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/6TPZSJ06OEXeelx1U1VIAt0j9Ry.jpg',
+                bottomImageURL:
+                    'https://occ-0-1001-444.1.nflxso.net/dnm/api/v6/tx1O544a9T7n8Z_G12qaboulQQE/AAAABff2ZUZrDEcjZlhTl6JF386T7IGaGmYGgfidWH2Sx9BTiDG1jCuQSAgVhwxkPJ-KkSoSU5uIVzKr99xcupRWAz-dV8WQh9nA1N0TNMeAwTeRDxKGp_5i_KpsFTw7VtOMI1oQFaTU7YzCOvRjAS1rTGf61LcjpFeyqXOXb7F7qg_1JA.png?r=b91',
+                borderColor: Colors.grey,
+              ),
+            ],
           ),
         ),
       ],
     );
   }
 
-  BottomNavigationBar _createBottomNabigation() {
+  BottomNavigationBar _createBottomNavigation() {
     return BottomNavigationBar(
         backgroundColor: Colors.black,
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.white30,
         type: BottomNavigationBarType.fixed,
         items: [
-          BottomNavigationBarItem(label: 'Home', icon: Icon(Icons.home)),
           BottomNavigationBarItem(
-            label: 'Search',
+              title: Text(
+                'Home',
+                style: TextStyle(fontSize: 12),
+              ),
+              icon: Icon(Icons.home)),
+          BottomNavigationBarItem(
+            title: Text(
+              'Search',
+              style: TextStyle(fontSize: 12),
+            ),
             icon: Icon(Icons.search),
           ),
           BottomNavigationBarItem(
-            label: 'Soon',
+            title: Text(
+              'Soon',
+              style: TextStyle(fontSize: 12),
+            ),
             icon: Icon(Icons.library_music),
           ),
           BottomNavigationBarItem(
-            label: 'Settings',
+            title: Text(
+              'Downloads',
+              style: TextStyle(fontSize: 12),
+            ),
             icon: Icon(Icons.arrow_downward),
           ),
           BottomNavigationBarItem(
-            label: 'More',
+            title: Text(
+              'More',
+              style: TextStyle(fontSize: 12),
+            ),
             icon: Icon(Icons.more_horiz),
           ),
         ]);
