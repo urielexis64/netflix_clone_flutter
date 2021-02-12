@@ -6,6 +6,9 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: 'Netflox App', home: HomePage());
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Netflox App',
+        home: HomePage());
   }
 }
