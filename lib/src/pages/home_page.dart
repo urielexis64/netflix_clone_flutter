@@ -9,6 +9,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: _createBody(),
       backgroundColor: Colors.black,
+      bottomNavigationBar: _createBottomNabigation(),
     );
   }
 
@@ -57,5 +58,32 @@ class HomePage extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  BottomNavigationBar _createBottomNabigation() {
+    return BottomNavigationBar(
+        backgroundColor: Colors.black,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white30,
+        type: BottomNavigationBarType.fixed,
+        items: [
+          BottomNavigationBarItem(label: 'Home', icon: Icon(Icons.home)),
+          BottomNavigationBarItem(
+            label: 'Search',
+            icon: Icon(Icons.search),
+          ),
+          BottomNavigationBarItem(
+            label: 'Soon',
+            icon: Icon(Icons.library_music),
+          ),
+          BottomNavigationBarItem(
+            label: 'Settings',
+            icon: Icon(Icons.arrow_downward),
+          ),
+          BottomNavigationBarItem(
+            label: 'More',
+            icon: Icon(Icons.more_horiz),
+          ),
+        ]);
   }
 }
