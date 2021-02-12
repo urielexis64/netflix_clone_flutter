@@ -28,7 +28,7 @@ class MainPoster extends StatelessWidget {
                 end: Alignment.center),
           ),
         ),
-        SafeArea(child: TopNavbar())
+        TopNavbar()
       ],
     );
   }

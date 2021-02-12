@@ -13,23 +13,25 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _createBody() {
-    return ListView(
-      children: [
-        MainPoster(),
-        _horizontalList(
-            'Avances',
-            RoundedItem(
-              imageURL:
-                  'https://3.bp.blogspot.com/-qvw0-RjIjyc/W5gPSBHfSeI/AAAAAAAAh6E/QBCS4YQVKlU7Ur1p0dCfG1WM2N8EB0OcQCLcBGAs/s640/Elite_Official_Poster_JPosters.jpg',
-              bottomImageURL:
-                  'https://www.pikpng.com/pngl/b/255-2550276_elite-elite-serie-logo-png-clipart.png',
-              borderColor: Colors.redAccent,
-            ),
-            10),
-        _horizontalList('Películas de miedo', SquareItem(), 20),
-        _horizontalList('Películas de miedo', SquareItem(), 20),
-        _horizontalList('Películas de miedo', SquareItem(), 20),
-      ],
+    return SafeArea(
+      child: ListView(
+        children: [
+          MainPoster(),
+          _horizontalList(
+              'Avances',
+              RoundedItem(
+                imageURL:
+                    'https://3.bp.blogspot.com/-qvw0-RjIjyc/W5gPSBHfSeI/AAAAAAAAh6E/QBCS4YQVKlU7Ur1p0dCfG1WM2N8EB0OcQCLcBGAs/s640/Elite_Official_Poster_JPosters.jpg',
+                bottomImageURL:
+                    'https://www.pikpng.com/pngl/b/255-2550276_elite-elite-serie-logo-png-clipart.png',
+                borderColor: Colors.redAccent,
+              ),
+              10),
+          _horizontalList('Películas de miedo', SquareItem(), 20),
+          _horizontalList('Películas de miedo', SquareItem(), 20),
+          _horizontalList('Películas de miedo', SquareItem(), 20),
+        ],
+      ),
     );
   }
 
